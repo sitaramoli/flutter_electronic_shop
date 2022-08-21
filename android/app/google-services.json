@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1000222769612",
+    "project_id": "electronic-shop-9db1e",
+    "storage_bucket": "electronic-shop-9db1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000222769612:android:6b968758ded975da4a5d69",
+        "android_client_info": {
+          "package_name": "com.baymax.electronic_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000222769612-7l3aeq7b7s0s01qdjl45addpoa7a2ec3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.baymax.electronic_shop",
+            "certificate_hash": "fe6291575524860292ff83ed32a1db49fd22356c"
+          }
+        },
+        {
+          "client_id": "1000222769612-7alob8fogsqcrl3p5b914biso831qv0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaZ01U3uG6M0XHWbqAxsZ7DioJmIIyxoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000222769612-7alob8fogsqcrl3p5b914biso831qv0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
