@@ -1,10 +1,10 @@
+import 'package:electronic_shop/app/config/preferences/preferences.dart';
 import 'package:electronic_shop/app/core/constants/strings_manager.dart';
 import 'package:electronic_shop/app/core/network/network_info.dart';
 import 'package:electronic_shop/app/core/widgets/snackbar.dart';
 import 'package:electronic_shop/features/authentication/login/domain/entities/user_entity.dart';
 import 'package:electronic_shop/features/authentication/login/domain/usecases/email_login.dart';
 import 'package:electronic_shop/features/authentication/login/domain/usecases/google_login.dart';
-import 'package:electronic_shop/features/authentication/login/domain/usecases/logout.dart';
 import 'package:electronic_shop/features/profile/data/data_sources/local_data_source.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -12,7 +12,6 @@ import 'package:hive/hive.dart';
 class LoginController extends ChangeNotifier {
   final EmailLoginUsecase emailLoginUsecase;
   final GoogleLoginUsecase googleLoginUsecase;
-  final LogoutUsecase logoutUsecase;
   final UserDb userDb;
   final NetworkInfo connectionStatus;
   late Box box;
@@ -20,7 +19,6 @@ class LoginController extends ChangeNotifier {
   LoginController({
     required this.emailLoginUsecase,
     required this.googleLoginUsecase,
-    required this.logoutUsecase,
     required this.userDb,
     required this.connectionStatus,
   });
@@ -32,13 +30,8 @@ class LoginController extends ChangeNotifier {
   bool get isLoading => _isLoading;
 
   Future<bool> isAuthenticated() async {
-    box = await Hive.openBox('userDb');
-    final uid = await box.get('uid');
-    if (uid != null) {
-      return true;
-    } else {
-      return false;
-    }
+    final prefs = await Preferences.getInstance();
+    return prefs.isLoggedIn();
   }
 
   void togglePasswordVisibility() {
@@ -90,9 +83,5 @@ class LoginController extends ChangeNotifier {
     } else {
       ErrorSnackBar.build(message: StringManager.NO_INTERNET, error: true);
     }
-  }
-
-  Future<void> logout() async {
-    await logoutUsecase.execute();
   }
 }

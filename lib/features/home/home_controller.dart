@@ -1,6 +1,6 @@
 import 'package:electronic_shop/features/cart/view/cart_view.dart';
 import 'package:electronic_shop/features/products/presentation/view/products_view.dart';
-import 'package:electronic_shop/features/profile/presentation/views/profile.dart';
+import 'package:electronic_shop/features/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';

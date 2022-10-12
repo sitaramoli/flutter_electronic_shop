@@ -5,5 +5,4 @@ import 'package:electronic_shop/features/authentication/login/domain/entities/us
 abstract class ILoginRepo {
   Future<Either<Failure, UserEntity>> emailLogin(UserEntity user);
   Future<Either<Failure, UserEntity>> googleLogin();
-  Future<void> logout();
 }

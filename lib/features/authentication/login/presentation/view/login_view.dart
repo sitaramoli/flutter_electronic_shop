@@ -13,7 +13,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-import 'login_controller.dart';
+import '../controller/login_controller.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -25,7 +25,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   late FormGroup _formGroup;
 
-  final viewmodel = instance<LoginController>();
+  final controller = instance<LoginController>();
 
   @override
   void initState() {

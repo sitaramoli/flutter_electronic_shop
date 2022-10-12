@@ -2,10 +2,10 @@ import 'package:electronic_shop/app/config/routes/app_routes.dart';
 import 'package:electronic_shop/app/core/constants/assets_manager.dart';
 import 'package:electronic_shop/app/core/constants/strings_manager.dart';
 import 'package:electronic_shop/app/core/constants/value_manager.dart';
-import 'package:electronic_shop/features/authentication/login/presentation/login_controller.dart';
+import 'package:electronic_shop/dependency_injection.dart';
+import 'package:electronic_shop/features/profile/presentation/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:provider/provider.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({Key? key}) : super(key: key);
@@ -19,13 +19,14 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   void initState() {
     super.initState();
-    openBox();
   }
 
   void openBox() async {
     box = await Hive.openBox('userDb');
     setState(() {});
   }
+
+  final controller = instance<ProfileController>();
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +76,7 @@ class _ProfileViewState extends State<ProfileView> {
             title: Text(StringManager.LOGOUT,
                 style: Theme.of(context).textTheme.subtitle1),
             onTap: () {
-              context.read<LoginController>().logout();
+              controller.logout();
               Navigator.pushReplacementNamed(context, Routes.loginRoute);
             },
           )

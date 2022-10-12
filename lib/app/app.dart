@@ -1,9 +1,10 @@
 import 'package:electronic_shop/app/config/routes/app_routes.dart';
 import 'package:electronic_shop/app/config/themes/theme_manager.dart';
-import 'package:electronic_shop/features/authentication/login/presentation/login_controller.dart';
+import 'package:electronic_shop/features/authentication/login/presentation/controller/login_controller.dart';
 import 'package:electronic_shop/features/home/home_controller.dart';
 import 'package:electronic_shop/features/products/presentation/controller/product_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 import 'package:electronic_shop/dependency_injection.dart' as di;
 
@@ -35,5 +36,11 @@ class _ElectronicShopAppState extends State<ElectronicShopApp> {
         onGenerateRoute: (settings) => RouteGenerator.getRoute(settings),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    Hive.close();
+    super.dispose();
   }
 }

@@ -43,8 +43,5 @@ class LoginRepo implements ILoginRepo {
     }
   }
 
-  @override
-  Future<void> logout() async {
-    await userDb.logout();
-  }
+  
 }

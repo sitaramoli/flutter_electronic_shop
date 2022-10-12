@@ -1,10 +1,12 @@
-import 'package:electronic_shop/features/authentication/login/presentation/login_view.dart';
+import 'package:electronic_shop/features/authentication/login/presentation/view/login_view.dart';
 import 'package:electronic_shop/features/home/home_view.dart';
-import 'package:electronic_shop/features/splash/presentation/splash_view.dart';
+import 'package:electronic_shop/features/on_boarding/presentation/view/onboarding_view.dart';
+import 'package:electronic_shop/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
   static const splashRoute = '/';
+  static const onBoardingRoute = '/onboarding';
   static const loginRoute = '/login';
   static const registerRoute = '/register';
   static const homeRoute = '/home';
@@ -16,6 +18,8 @@ class RouteGenerator {
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
+      case Routes.onBoardingRoute:
+        return MaterialPageRoute(builder: (_) =>  OnboardingView());
       case Routes.loginRoute:
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.homeRoute:

@@ -1,3 +1,4 @@
+import 'package:electronic_shop/app/config/preferences/preferences.dart';
 import 'package:electronic_shop/features/authentication/login/domain/entities/user_entity.dart';
 import 'package:hive/hive.dart';
 
@@ -10,11 +11,6 @@ class UserDb {
     box.put('email', user.email);
     box.put('name', user.name);
     box.put('image', user.image);
-    box.put('loggedIn', true);
-  }
-
-  Future<void> logout() async {
-    box = await Hive.openBox('userDb');
-    box.clear();
+    Preferences.getInstance().then((value) => value.setLoggedIn());
   }
 }

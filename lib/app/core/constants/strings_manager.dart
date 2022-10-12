@@ -26,5 +26,11 @@ class StringManager {
   static const GOOGLE = 'Continue with Google';
   static const LOGOUT = 'Log Out';
   static const APP_TITLE = 'Electronic Shop';
-  static const SPLASH = 'Shop Till You Drop';
+  static const SPLASH = 'Shop,\nTill You Drop';
+
+  //onboarding
+  static const ONBOARDING_TITLE = 'Find your favourite gadgets here';
+  static const ONBOARDING_SUB_TITLE =
+      'Explore all the most trending gadgets here based on your interests and go shopping!';
+  static const ONBOARDING_BUTTON = 'Get Started';
 }
