@@ -41,7 +41,7 @@ class ThemeManager {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
           textStyle: getRegularStyle(color: ColorManager.WHITE),
-          primary: ColorManager.PRIMARY,
+          backgroundColor: ColorManager.PRIMARY,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(AppSize.S12))),
     ),
